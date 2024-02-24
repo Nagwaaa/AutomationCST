@@ -1,0 +1,26 @@
+{
+    "username":"admin",
+    "password":"1q2w3E*",
+    "managment" :" الإعدادات ",
+    "subMenu":" الوثائق المعتمدة",
+    "docName":"وثيقة تست 224",
+    "nameEN":"TestDocument224",
+    "docNameSup":"وثيقة تست 224 سبورت",
+    "nameENsup":"TestDocument224Support",
+    "docNameUp":"تعديل ثيقة تست اوتو",
+    "nameENup":"TestDocumentAupdate",
+    "sector":"قطاع الطيف الترددي",
+    "dep":"الإدارة العامة لتخطيط الطيف الترددي",
+    "type":"النماذج",
+    "year":"2025",
+    "month":"مايو",
+    "day":"20",
+    "path":"doc.pdf",
+    "image":"ev4.jpg",
+    "message":"تمت عملية ( إضافة وثيقة ) بنجاح ",
+    "delMess":"تمت عملية ( حذف وثيقة ) بنجاح ",
+    "upMess":"تمت عملية ( تعديل وثيقة ) بنجاح "
+    
+
+   
+}
