@@ -50,6 +50,7 @@ describe('adminManageDocuments',()=>
          del.ElementList(data.docName,'.icon-download')
          cy.wait(2000)
          cy.readFile('C:/Users/Ts/Desktop/CST/cypress/downloads/'+data.image).should('exist')
+         cy.log("ConnentWithGithub")
        })
     
 
