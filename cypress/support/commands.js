@@ -1,6 +1,5 @@
 // ***********************************************
 import 'cypress-file-upload' 
-import LoginPage from '../Pages/loginPage'
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
@@ -13,11 +12,6 @@ import LoginPage from '../Pages/loginPage'
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-    const login=new LoginPage()
-    Cypress.Commands.add('loginCST', (username, password) => { 
-        login.UserLogin(username,password)
-    })
-
     
     
     Cypress.Commands.add('SetSttings', (setting,subSetting) => { 
@@ -43,13 +37,6 @@ import LoginPage from '../Pages/loginPage'
     Cypress.Commands.add('SearchFor', (selector,word) => { 
         cy.get(selector).type(word)
     })
-
-   
-
-  
-        
-
-
 
 //
 //

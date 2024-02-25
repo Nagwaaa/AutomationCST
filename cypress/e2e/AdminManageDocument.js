@@ -1,5 +1,6 @@
 import deleteDocPage from '../Pages/deleteDocPage'
 import addDocPage from "../Pages/addDocPage"
+import LoginPage from '../Pages/LoginPage'
 
 
 describe('adminManageDocuments',()=>
@@ -7,10 +8,11 @@ describe('adminManageDocuments',()=>
     it('AddDocument',()=>
     {   
        const addp=new addDocPage()
+       const login=new LoginPage()
        cy.visit('/')
        cy.fixture('TestData').then(function(data)
        {
-         cy.loginCST(data.username,data.password)
+         login.UserLogin(data.username,data.password)
          cy.SetSttings(data.managment,data.subMenu)
          addp.clickOnAddDocument()
          addp.addDocument(data.docName,data.image,data.sector,data.dep,data.type,data.year,data.month,data.day,"nooote")
@@ -24,10 +26,11 @@ describe('adminManageDocuments',()=>
     it('AddDocumentSupportEnglish',()=>
     {   
        const addp=new addDocPage()
+       const login=new LoginPage()
        cy.visit('/')
        cy.fixture('TestData').then(function(data)
        {
-         cy.loginCST(data.username,data.password)
+         login.UserLogin(data.username,data.password)
          cy.SetSttings(data.managment,data.subMenu)
          addp.clickOnAddDocument()
          cy.get('#support').check()
@@ -39,18 +42,18 @@ describe('adminManageDocuments',()=>
     })
 
 
-    it.only('AdminDownloadAttachment',()=>
+    it('AdminDownloadAttachment',()=>
     {
       const del=new deleteDocPage()
+      const login=new LoginPage()
       cy.visit('/')
        cy.fixture('TestData').then(function(data)
        {
-         cy.loginCST(data.username,data.password)
+        login.UserLogin(data.username,data.password)
          cy.SetSttings(data.managment,data.subMenu)
          del.ElementList(data.docName,'.icon-download')
          cy.wait(2000)
          cy.readFile('C:/Users/Ts/Desktop/CST/cypress/downloads/'+data.image).should('exist')
-         cy.log("ConnentWithGithub")
        })
     
 
@@ -59,10 +62,11 @@ describe('adminManageDocuments',()=>
     it('AdminActiveInactiveDocument',()=>
     {
       const del=new deleteDocPage()
+      const login=new LoginPage()
       cy.visit('/')
        cy.fixture('TestData').then(function(data)
        {
-         cy.loginCST(data.username,data.password)
+        login.UserLogin(data.username,data.password)
          cy.SetSttings(data.managment,data.subMenu)
          del.ElementList(data.docName,'.form-check-input.ng-untouched.ng-pristine.ng-valid')
          del.clicksOnDelete()
@@ -79,10 +83,11 @@ describe('adminManageDocuments',()=>
     it('AdminDeleteDocument',()=>
 {
   const del=new deleteDocPage()
+  const login=new LoginPage()
    cy.visit('https://stg-cst.starwayseg.com/')
    cy.fixture('TestData').then(function(data)
    {
-     cy.loginCST(data.username,data.password)
+    login.UserLogin(data.username,data.password)
      cy.SetSttings(data.managment,data.subMenu)
      del.ElementList(data.docName,'.icon-trash')
      del.clicksOnDelete()
